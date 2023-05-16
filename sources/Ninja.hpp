@@ -9,6 +9,7 @@ namespace ariel
     {
     private:
         int speed;
+        int health;
 
     public:
         /**
@@ -33,6 +34,13 @@ namespace ariel
          * @brief Taking points from other Character object by slashing him
          */
         virtual void slash(Character *other);
+
+        /**
+         * @brief Returns the amount of health for particular ninja
+         */
+        virtual int getHealth();
+
+        virtual int setHealth(int helath);
     };
 }
 

@@ -20,3 +20,15 @@ void Ninja::slash(Character *other)
 {
     return;
 }
+
+int Ninja::getHealth()
+{
+    return this->health;
+}
+
+int Ninja::setHealth(int health)
+{
+    int new_helath = health;
+    this->health = new_helath;
+    return this->health;
+}
