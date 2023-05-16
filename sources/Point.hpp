@@ -8,8 +8,8 @@ namespace ariel
     class Point
     {
     private:
-        double x;
-        double y;
+        double _x;
+        double _y;
 
     public:
         // Constructor and empty constructor
@@ -20,10 +20,10 @@ namespace ariel
         double getX() const;
         double getY() const;
 
-        double setX(double new_x);
-        double setY(double new_y);
+        void setX(double new_x);
+        void setY(double new_y);
 
-        void print() const;
+        void print();
 
         /**
          * @brief computes the distance of two points

@@ -12,7 +12,7 @@ namespace ariel
     {
     private:
         Point &location; // location of the Carachter on the board
-        int points;
+        int health;
         string name;
 
     public:
