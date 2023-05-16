@@ -12,12 +12,16 @@ namespace ariel
         double y;
 
     public:
+        // Constructor and empty constructor
         Point(double x, double y);
         Point();
-        ~Point() = default;
 
+        // getters for Point
         double getX() const;
         double getY() const;
+
+        double setX(double new_x);
+        double setY(double new_y);
 
         void print() const;
 
@@ -26,7 +30,7 @@ namespace ariel
          * @return the distance
          * @param other the second point to compare
          */
-        double distance(const Point &other) const;
+        double distance(Point &other);
 
         /**
          * @param first the source point
@@ -34,7 +38,7 @@ namespace ariel
          * @param distance the max distance between the two points
          * @return the closest point to the destination point
          */
-        Point moveTowards(Point &first, Point &second, double distance) const;
+        Point moveTowards(Point &first, Point &second, double distance);
     };
 }
 

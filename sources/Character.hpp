@@ -11,36 +11,52 @@ namespace ariel
     class Character
     {
     private:
-        Point location;
-        int point;
+        Point &location; // location of the Carachter on the board
+        int points;
         string name;
 
     public:
-        Character(string name, Point &location, int point);
-        Character();
-        ~Character() = default;
+        Character(string name, Point &location);
+        Character(Character &other_character);
+        virtual ~Character();
 
-        string getName() const;
-        Point getLocation() const;
+        /**
+         * @brief Virtual function to overide
+         * @return the name of the Player
+         */
+        virtual string getName();
+
+        /**
+         * @brief Virtual function to overide
+         * @return the location of the Player
+         */
+        virtual Point getLocation();
 
         /**
          * @return true if the given Character is alive, false otherwise
          */
-        bool isAlive() const;
+        virtual bool isAlive();
 
         /**
          * @return the distance between the two Characters
          * @param other the second Character to compare
          */
-        double distance(const Character &other) const;
+        virtual double distance(Character *other);
 
         /**
          * @brief reduces the given points from the health of the Character
          * @param points the amount of health to take
          */
-        void hit(int points);
+        virtual void hit(int points_to_take);
 
-        void print();
+        virtual string print();
+
+        /**
+         * @brief function two compare to objects of Character
+         * @param other the second Character object
+         * @return true if the objects are the same, false otherwise
+         */
+        Character &operator=(const Character &other);
     };
 }
 
